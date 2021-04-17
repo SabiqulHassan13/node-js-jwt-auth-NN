@@ -32,6 +32,12 @@ app.get("/auth/login", (req, res) => {
   });
 });
 
+app.get("/auth/register", (req, res) => {
+  return res.render("auth/register", {
+    title: "Register",
+  });
+});
+
 // app server listen
 app.listen(port, () => {
   console.log(`Server is running at port: ${port}`);

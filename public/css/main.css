@@ -152,7 +152,10 @@ input,
 button[type="submit"] {
   display: block;
   width: 100%;
-  /* margin-bottom: 4px; */
+}
+
+.auth-form .form-row label {
+  margin-bottom: 4px;
 }
 
 .auth-form .form-row input {

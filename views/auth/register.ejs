@@ -2,7 +2,11 @@
 
 <main>
   <form action="" class="auth-form">
-    <h2>Login Page</h2>
+    <h2>Register Page</h2>
+    <div class="form-row">
+      <label for="username">Username</label>
+      <input type="username" name="username" id="username" />
+    </div>
     <div class="form-row">
       <label for="email">Email</label>
       <input type="email" name="email" id="email" />
@@ -11,12 +15,13 @@
       <label for="password">Password</label>
       <input type="password" name="password" id="password" />
     </div>
+    <div class="form-row">
+      <label for="password">Confirm Password</label>
+      <input type="password" name="password" id="password" />
+    </div>
     <button type="submit" class="submit-btn">Login</button>
     <div class="auth-links">
-      <p>Forget your password? <a href="">Click Here</a></p>
-      <p>
-        Don't you have an account? <a href="/auth/register">Register Now</a>
-      </p>
+      <p>Do you have an account? <a href="/auth/login">Login Now</a></p>
     </div>
   </form>
 </main>
