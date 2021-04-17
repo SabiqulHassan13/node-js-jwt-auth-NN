@@ -1,12 +1,23 @@
 <%- include('../partials/_header'); -%>
 
 <main>
-  <h1 class="page-header">Account Login Page</h1>
-  <div class="page-content">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium
-    facilis nulla voluptate quas, assumenda obcaecati ad unde distinctio.
-    Accusamus, illum.
-  </div>
+  <!-- <h1 class="page-header">Account Login Page</h1> -->
+
+  <form action="" class="auth-form">
+    <h2>Login Page</h2>
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+    </div>
+    <div class="form-row">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+    </div>
+    <button type="submit" class="submit-btn">Login</button>
+    <div class="auth-links">
+      <p>Forget your password? <a href="">Click Here</a></p>
+    </div>
+  </form>
 </main>
 
 <%- include('../partials/_footer'); -%>
