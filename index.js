@@ -7,6 +7,7 @@ const db = require("./config/mongoose");
 
 // app middlewares
 app.use(express.static("public"));
+app.use(express.json());
 
 // app view engine
 app.set("view engine", "ejs");
@@ -26,17 +27,20 @@ app.get("/dashboard", (req, res) => {
   });
 });
 
-app.get("/auth/login", (req, res) => {
-  return res.render("auth/login", {
-    title: "Login",
-  });
-});
+// auth routes
+app.use("/auth", require("./routes/auth"));
 
-app.get("/auth/register", (req, res) => {
-  return res.render("auth/register", {
-    title: "Register",
-  });
-});
+// app.get("/auth/login", (req, res) => {
+//   return res.render("auth/login", {
+//     title: "Login",
+//   });
+// });
+
+// app.get("/auth/register", (req, res) => {
+//   return res.render("auth/register", {
+//     title: "Register",
+//   });
+// });
 
 // app server listen
 app.listen(port, () => {
