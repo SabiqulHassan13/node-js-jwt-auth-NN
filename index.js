@@ -11,20 +11,21 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 
-const authMW = require("./middlewares/auth");
+const { checkAuth, checkUser } = require("./middlewares/auth");
 
 // app view engine
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
 // app routes list
+app.get("*", checkUser);
 app.get("/", (req, res) => {
   //   res.send("<h1>JWT Auth</h1>");
   return res.render("home", {
     title: "Home",
   });
 });
-app.get("/dashboard", authMW, (req, res) => {
+app.get("/dashboard", checkAuth, (req, res) => {
   //   res.send("<h1>Account Dashboard</h1>");
   return res.render("dashboard", {
     title: "Dashboard",
