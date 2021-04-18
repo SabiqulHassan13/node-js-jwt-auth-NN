@@ -13,7 +13,7 @@ app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-// app routes
+// app routes list
 app.get("/", (req, res) => {
   //   res.send("<h1>JWT Auth</h1>");
   return res.render("home", {
