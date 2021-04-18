@@ -11,6 +11,8 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 
+const authMW = require("./middlewares/auth");
+
 // app view engine
 app.set("view engine", "ejs");
 app.set("views", "./views");
@@ -22,7 +24,7 @@ app.get("/", (req, res) => {
     title: "Home",
   });
 });
-app.get("/dashboard", (req, res) => {
+app.get("/dashboard", authMW, (req, res) => {
   //   res.send("<h1>Account Dashboard</h1>");
   return res.render("dashboard", {
     title: "Dashboard",
