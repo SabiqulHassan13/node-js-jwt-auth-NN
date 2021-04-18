@@ -88,5 +88,7 @@ module.exports.processRegister = async (req, res) => {
 };
 
 module.exports.processLogout = (req, res) => {
-  return res.send("Process Logout");
+  // return res.send("Process Logout");
+  res.cookie("jwt", "", { maxAge: 1 });
+  res.redirect("/");
 };
