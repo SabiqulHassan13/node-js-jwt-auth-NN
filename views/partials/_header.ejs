@@ -13,8 +13,11 @@
       <ul class="app-nav">
         <li><a href="/">Home</a></li>
         <li><a href="/dashboard">Account</a></li>
+        <% if(!currentUser) { %>
         <li><a href="/auth/login" class="auth-btn">Login</a></li>
+        <% } else { %>
         <li><a href="/auth/logout" class="auth-btn">Logout</a></li>
+        <% } %>
       </ul>
     </header>
   </body>

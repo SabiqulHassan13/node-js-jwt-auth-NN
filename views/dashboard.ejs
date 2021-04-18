@@ -8,8 +8,11 @@
     Accusamus, illum.
   </div>
   <div class="page-content">
-    <p>Username :</p>
-    <p>Email :</p>
+    <p>
+      Username : <%= !currentUser.username ? "Not Available" :
+      currentUser.username; %>
+    </p>
+    <p>Email : <%= currentUser.email %></p>
   </div>
 </main>
 

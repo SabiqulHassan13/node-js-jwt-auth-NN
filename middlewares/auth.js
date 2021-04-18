@@ -20,6 +20,7 @@ const checkAuth = (req, res, next) => {
   }
 };
 
+// check currentUser
 const checkUser = (req, res, next) => {
   const token = req.cookies.jwt;
 
@@ -28,17 +29,17 @@ const checkUser = (req, res, next) => {
     jwt.verify(token, "JWT secrect", async (err, decodedToken) => {
       if (err) {
         console.log(err.message);
-        res.local.currentUser = null;
+        res.locals.currentUser = null;
         next();
       } else {
         console.log(decodedToken);
         let user = await User.findById(decodedToken.id);
-        res.local.currentUser = user;
+        res.locals.currentUser = user;
         next();
       }
     });
   } else {
-    res.local.currentUser = null;
+    res.locals.currentUser = null;
     next();
   }
 };
