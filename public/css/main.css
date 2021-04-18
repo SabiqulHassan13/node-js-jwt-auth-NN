@@ -140,11 +140,12 @@ main .page-content {
 .auth-form h2 {
   text-align: center;
   /* text-transform: uppercase; */
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .auth-form .form-row {
-  margin: 16px 0;
+  /* margin: 16px 0; */
+  margin: 8px 0;
 }
 
 .auth-form .form-row label,
@@ -171,6 +172,12 @@ button[type="submit"] {
   border-radius: 4px;
 }
 
+.form-row small.error-alert {
+  color: var(--red-1);
+  font-weight: bold;
+  opacity: 0.8;
+}
+
 .auth-form .submit-btn {
   background-color: var(--blue-1);
   color: var(--white-1);
@@ -179,8 +186,9 @@ button[type="submit"] {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px;
-  padding: 8px 0;
   border-radius: 4px;
+  padding: 8px 0;
+  /* margin-top: 8px; */
 }
 
 .auth-form .submit-btn:hover {
@@ -189,10 +197,12 @@ button[type="submit"] {
   outline: none;
   border: 2px solid var(--blue-1);
   padding: 6px 0;
+  cursor: pointer;
 }
 
 .auth-links {
-  margin: 16px 0;
+  /* margin: 16px 0; */
+  margin: 8px 0;
 }
 
 .auth-links p {

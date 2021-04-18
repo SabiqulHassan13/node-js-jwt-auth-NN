@@ -1,29 +1,39 @@
 <%- include('../partials/_header'); -%>
 
 <main>
-  <form action="" class="auth-form">
-    <h2>Register Page</h2>
-    <!-- <div class="form-row">
-      <label for="username">Username</label>
-      <input type="username" name="username" id="username" />
-    </div> -->
-    <div class="form-row">
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" />
-    </div>
-    <div class="form-row">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" />
-    </div>
-    <!-- <div class="form-row">
-      <label for="password">Confirm Password</label>
-      <input type="password" name="password" id="password" />
-    </div> -->
-    <button type="submit" class="submit-btn">Login</button>
+  <div class="auth-form">
+    <form action="" method="POST">
+      <h2>Account Register</h2>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <small class="email error-alert">Enter a valid email</small>
+      </div>
+      <div class="form-row">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <small class="password error-alert">Enter a valid password</small>
+      </div>
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+
     <div class="auth-links">
       <p>Do you have an account? <a href="/auth/login">Login Now</a></p>
     </div>
-  </form>
+  </div>
 </main>
+
+<script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // get the data
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+  });
+</script>
 
 <%- include('../partials/_footer'); -%>
